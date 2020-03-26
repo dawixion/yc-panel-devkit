@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+// GENERAL SETTINGS
+html {
+    position: relative;
+    height: 100%!important;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    overflow-x: hidden;
+}
+body{
+    display: block;
+    position: relative;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+section{
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+a{
+    &:hover{
+        cursor: pointer;
+    }
+}

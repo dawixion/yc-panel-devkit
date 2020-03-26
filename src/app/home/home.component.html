@@ -1,0 +1,8 @@
+<h1>Cześć {{currentLoggedUser.name}} ({{currentLoggedUser.position}}, {{currentLoggedUser.department}})!</h1>
+<p>Wszyscy zarejestrowani użytkownicy:</p>
+<ul>
+    <li *ngFor="let user of users">
+        {{user.name}} {{user.surname}} ({{user.position}})
+        - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
+    </li>
+</ul>
