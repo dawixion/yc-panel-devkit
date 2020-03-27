@@ -34,14 +34,21 @@
                 display: block;
                 padding: 10px 25px;
                 color: rgba(255,255,255,.5)!important;
+                transition: color 0.2s ease-in-out;
 
                 &:hover{
                     color: #fff!important;
+                    text-decoration: none;
+                }
+                
+                &.active{
+                    color: #ffea00!important;
                 }
             }
         }
         &-right{
-
+            display: block;
+            min-height: 85vh;
         }
     }
     &__footer{

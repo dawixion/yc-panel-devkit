@@ -24,7 +24,10 @@
 <section class="application__module" *ngIf="currentUser">
   <div class="row">
       <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12 application__module-left">
-          <a class="application__module-left--link" routerLink="/">Home</a>
+          <a class="application__module-left--link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+            true}" routerLink="/">Home</a>
+          <a class="application__module-left--link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+            true}" routerLink="/timesheet">Lista obecności</a>
       </div>
       <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-12 application__module-right">
           <router-outlet></router-outlet>
@@ -36,5 +39,5 @@
 
 <!-- credits -->
 <div class="application__footer">
-  <a href="https://jasonwatmore.com" target="_top"> Copyright by YC Sp. z o.o</a>
+  <a href="https://y-c.com.pl/" target="_blank"> Copyright by YC Sp. z o.o</a>
 </div>

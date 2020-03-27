@@ -2,29 +2,37 @@ import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
 
 import { User } from '@/_models';
-import { UserService, AuthenticationService } from '@/_services';
+import { UserService, AuthenticationService, LocalStorageService } from '@/_services';
+import { routerTransition } from '@/router.animation';
 
 @Component({
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  animations: [routerTransition()]
 })
 export class HomeComponent implements OnInit {
   currentUser: User;
   users = [];
   currentLoggedUserID: number;
-  currentLoggedUser = []; 
+  currentLoggedUser: any; 
 
   constructor(
       private authenticationService: AuthenticationService,
-      private userService: UserService
+      private userService: UserService,
+      private localStorageService: LocalStorageService
   ) {
       this.currentUser = this.authenticationService.currentUserValue;
       this.currentLoggedUserID = this.authenticationService.currentUserValue.id;
   }
 
   ngOnInit() {
-      this.loadAllUsers();
-      this.loadCurrentLoggedUserData(this.currentLoggedUserID);
+        this.loadAllUsers();
+        this.setLocalCurrentLoggedUserData(this.currentLoggedUserID);   
+
+        this.localStorageService.currentUserLocalStorageData.subscribe((data) => {
+            this.currentLoggedUser = JSON.parse(data);
+        })
+      
   }
 
   deleteUser(id: number) {
@@ -39,9 +47,13 @@ export class HomeComponent implements OnInit {
           .subscribe(users => this.users = users);
   }
 
-  private loadCurrentLoggedUserData(id: number) {
-      this.userService.getSingleById(id)
-          .pipe(first())
-          .subscribe(dane => this.currentLoggedUser = dane );
+  private setLocalCurrentLoggedUserData(id: number) {
+    this.userService.getSingleById(id)
+        .pipe(first())
+        .subscribe(dane => {
+            this.localStorageService.currentUserLocalStorage = JSON.stringify(dane);
+                        
+        });
   }
-} 
+}  
+ 

@@ -2,11 +2,13 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { AlertService } from '@/_services';
+import { routerTransition } from '@/router.animation';
 
 @Component({ 
     selector: 'alert', 
     templateUrl: './alert.component.html', 
-    styleUrls: ['./alert.component.scss'] 
+    styleUrls: ['./alert.component.scss'],
+    animations: [routerTransition()]
 })
 
 export class AlertComponent implements OnInit, OnDestroy {

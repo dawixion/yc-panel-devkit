@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 // GENERAL SETTINGS
 html {
     position: relative;
@@ -30,5 +32,6 @@ section{
 a{
     &:hover{
         cursor: pointer;
+        text-decoration: none;
     }
 }
