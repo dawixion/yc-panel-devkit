@@ -1,0 +1,42 @@
+.timeSheetByDay{
+    width: 100%;
+    height: auto;
+
+    &__buttons{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        &--btn{
+            padding: 5px 30px;
+            background-color: #7b7b7b;
+            color: rgba(255, 255, 255, 0.5) !important;
+            transition: color 0.2s ease-in-out;
+            text-align: center;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &:hover,
+            &:focus {
+                color: #ffea00 !important;
+            }
+        }
+
+        &--date{
+            text-align: center;
+        }
+    }
+
+    & .table{
+        &--error{
+            width: 100%;
+            height: auto;
+            position: relative;
+            padding: 50px 0;
+            text-align: center;
+            font-size: 16px;
+        }
+    }
+}
+

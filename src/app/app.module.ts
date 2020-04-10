@@ -1,22 +1,11 @@
+// ANGULAR
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-// used to create fake backend
-import { fakeBackendProvider } from './_helpers';
-
-import { AppRoutingModule } from './app-routing.module';
-import { JwtInterceptor, ErrorInterceptor } from './_helpers';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { AlertComponent } from './alert/alert.component';
-import { TimesheetComponent } from './timesheet/timesheet.component';
-
-
-// Angular materialize 
+// ANGULAR MATERIALIZE 
 import {A11yModule} from '@angular/cdk/a11y';
 import {ClipboardModule} from '@angular/cdk/clipboard';
 import {DragDropModule} from '@angular/cdk/drag-drop';
@@ -59,14 +48,28 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
- 
+
+// APILICATION
+import { fakeBackendProvider } from './_helpers';
+import { AppRoutingModule } from './app-routing.module';
+import { JwtInterceptor, ErrorInterceptor } from './_helpers';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { AlertComponent } from './alert/alert.component';
+import { TimesheetComponent } from './timesheet/timesheet.component';
+import { TimesheetByDayComponent } from './timesheet-by-day/timesheet-by-day.component';
+import { TimesheetByMonthComponent } from './timesheet-by-month/timesheet-by-month.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
     AlertComponent,
-    TimesheetComponent
+    TimesheetComponent,
+    TimesheetByDayComponent,
+    TimesheetByMonthComponent
   ],
   imports: [
     BrowserModule,
@@ -130,3 +133,5 @@ import {MatTreeModule} from '@angular/material/tree';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

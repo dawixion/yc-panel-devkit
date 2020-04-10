@@ -16,6 +16,10 @@ export class HomeComponent implements OnInit {
   currentLoggedUserID: number;
   currentLoggedUser: any; 
 
+  moment = require('moment');
+  actualdate = this.moment().format();
+  actualDateFormatted = this.actualdate.substring(0, 22) + this.actualdate.substring(23);
+
   constructor(
       private authenticationService: AuthenticationService,
       private userService: UserService,
